@@ -3,7 +3,6 @@ import {Row, Col} from 'react-bootstrap';
 import Images from '../share/Image';
 
 export default function CardQueue(props) {
-    console.log(props.props)
     return (
         <div className = 'queue'>
             <Row>

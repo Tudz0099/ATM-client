@@ -5,7 +5,6 @@ import axios from 'axios'
 export const AtmContext = createContext()
 
 const AtmContextProvider = ({children}) => {
-    const [state, setState] = useState()
 
     // get atm
     const getAtm = async() => {
@@ -40,8 +39,7 @@ const AtmContextProvider = ({children}) => {
         try {
             const response = await axios.delete(`${apiUrl}api/v1/atms/${id}`)
             if(response.data.remove){
-                setState(response.data.atms)
-                return response.data
+                return response.data.remove
             }
         } catch(err){
             return ({

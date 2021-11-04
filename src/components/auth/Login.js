@@ -40,7 +40,7 @@ export default function Login() {
             if(loginData.user){
                 toast.success(loginData.message)
                 setTimeout(() => {
-                    history.push('/home')
+                    history.push('/')
                 }, 1500);
             }
         }catch(err){

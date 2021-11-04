@@ -5,6 +5,8 @@ import AtmContextProvider from './components/context/AtmContext';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register'
 import Home from './components/Home';
+import Dashboard from './routing/Dashboard';
+import Auth from './routing/Auth'
 
 const App = () => {
   return (
@@ -12,10 +14,17 @@ const App = () => {
       <AtmContextProvider>
         <Router>
           <Switch>
-            <Route path="/" exact component={Login} />
-            <Route path="/login" exact component={Login}/>
-            <Route path='/register' exact component={Register}/>
-            <Route path='/home' exact component={Home}/>
+          <Route
+									exact
+									path='/login'
+									render={props => <Auth {...props} authRoute='login' />}
+								/>
+								<Route
+									exact
+									path='/register'
+									render={props => <Auth {...props} authRoute='register' />}
+								/>
+            <Route path='/' exact component={Dashboard}/>
           </Switch>
         </Router>
       </AtmContextProvider>

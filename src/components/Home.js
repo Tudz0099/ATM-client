@@ -1,6 +1,6 @@
 import React, {useState, useContext, useEffect} from 'react'
 import { AtmContext } from './context/AtmContext';
-import {Container, Row, Col, Button, Spinner} from 'react-bootstrap';
+import {Container, Row, Col, Button, Spinner, Navbar} from 'react-bootstrap';
 import Card from './card/Card'
 import CardQueue from './card/CardQueue';
 import '../App.css';
@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home() {
-    const {getAtm, postAtm, transactionAtm} = useContext(AtmContext)
+    const {getAtm, postAtm} = useContext(AtmContext)
 
     const [atm, setAtm] = useState()
     const [queue, setQueue] = useState()
@@ -33,7 +33,6 @@ export default function Home() {
       }, []);
 
 
-
     // post atm
     const handlePostAtm = async() => {
         try{
@@ -47,8 +46,6 @@ export default function Home() {
             toast.warning(err.message)
         }
     }
-
-   
 
 
     return (

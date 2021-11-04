@@ -44,7 +44,7 @@ export default function Register() {
             if(registerData.user){
                 toast.success(registerData.message)
                 setTimeout(() => {
-                    history.push('/home')
+                    history.push('/')
                 }, 1500);       
             }  
         } catch(err){

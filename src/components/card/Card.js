@@ -11,14 +11,12 @@ export default function Card(props) {
 
      // remove atm
      const handleRemoveAtm = async() => {
-        try{
-            const data = removeAtm(props.props.id)
-            if(data){   
-                toast.success('remove atm success !')
-            }
-        }catch(err){
-            console.log(err.message)
-        }
+        removeAtm(props.props.id)
+            .then((data) => {
+                if(data === true){
+                    toast.success('remove atm success !')
+                }
+            })
     }
     return (
         <div className='card_atm'>
