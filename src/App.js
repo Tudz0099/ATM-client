@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import AuthContextProvider from './components/context/AuthContext';
+import AtmContextProvider from './components/context/AtmContext';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register'
+import Home from './components/Home';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthContextProvider>
+      <AtmContextProvider>
+        <Router>
+          <Switch>
+            <Route path="/" exact component={Login} />
+            <Route path="/login" exact component={Login}/>
+            <Route path='/register' exact component={Register}/>
+            <Route path='/home' exact component={Home}/>
+          </Switch>
+        </Router>
+      </AtmContextProvider>
+    </AuthContextProvider>
   );
 }
 

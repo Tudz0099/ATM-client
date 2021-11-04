@@ -1,38 +1,111 @@
 .App {
+  padding-top: 3rem;
+  width: 100% ;
+  height: 100vh;
+}
+
+.form_input{
+  flex-direction: column;
+  margin: auto;
+  max-width: 600px;
+}
+
+.form_title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.card_atm {
+  width: 210px;
+  height: 340px;
+  border: 1px solid rgb(230, 228, 228);
+  border-radius: 5px;
+  padding: 16px; 
+  margin-right: 20px;
+  margin-bottom: 60px;
+}
+
+.card_close {
+  text-align: end;
+  margin-bottom: 2px;
+}
+
+.card_close > img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.atm_img > img {
+  max-width: 180px;
+  max-height: 180px;
+}
+
+.content {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content > p {
+  font-size: 2rem;
+  font-weight: 600;
+  color: red;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.free {
+  color: #198754 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home {
+  padding: 50px 0 10px 0;
+}
+
+.quete {
+  background-color: #d3d3d3;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.btn_add{
+  cursor: pointer;
+}
+
+.card_content {
+  background-color: #f7f7f7;
+  width: 210px;
+  margin-left: -16px;
+}
+
+.img_client > img {
+  width: 30px;
+  height: 30px;
+}
+
+.img_client {
+  padding: 5px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.card_wraps {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  margin-top: 1rem;
+  max-height: 100vh;
+  overflow: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.queue {
+  width: 300px;
+  height: 100px;
+  border: 10px solid #d3d3d3;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.queue_list {
+  max-height: 100vh;
+  overflow: auto;
 }
