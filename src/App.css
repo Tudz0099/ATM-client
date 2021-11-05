@@ -67,6 +67,7 @@
 
 .btn_add{
   cursor: pointer;
+  margin-right: 15px;
 }
 
 .card_content {

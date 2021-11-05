@@ -3,7 +3,7 @@ import { AtmContext } from '../context/AtmContext'
 import Images from '../share/Image'
 import '../../App.css'
 import {Row, Col} from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Card(props) {
@@ -11,6 +11,7 @@ export default function Card(props) {
 
      // remove atm
      const handleRemoveAtm = async() => {
+         toast.info('Wait for the processing to finish')
         removeAtm(props.props.id)
             .then((data) => {
                 if(data === true){
@@ -39,11 +40,11 @@ export default function Card(props) {
                     ):(
                         <p>{props.props.status}</p>
                     )}
-                    <h4>Missouri</h4>
+                    <h4>{props.props.name}</h4>
                 </div>
             </div>
             <div className='card_content'>
-                {props.props.status === 'Busy' ? (
+                {props.props.status === 'Busy' && (
                     <Row>
                         <Col sm = {4} className='img_client'>
                             <img
@@ -57,8 +58,6 @@ export default function Card(props) {
                             <div>transactions:{props.props.transaction}</div>
                         </Col>
                     </Row>
-                ):(
-                    <div></div>
                 )}
             </div>
         </div>

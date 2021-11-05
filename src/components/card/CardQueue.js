@@ -14,7 +14,7 @@ export default function CardQueue(props) {
                 </Col>
                 <Col sm={8}>
                     <div>Name: {props.props.name}</div>
-                    <div>Transaction: {props.props.transaction/1000}</div>
+                    <div>Transaction: {props.props.transaction}</div>
                 </Col>
             </Row>
         </div>

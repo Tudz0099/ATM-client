@@ -20,15 +20,29 @@ const AtmContextProvider = ({children}) => {
         }
     }
 
-    // post atm
-    const postAtm = async() => {
+    // add atm
+    const postAtm = async input => {
         try{
-            const response = await axios.post(`${apiUrl}api/v1/atms`)
+            const response = await axios.post(`${apiUrl}api/v1/atms`, input)
             if(response.data){
                 return response.data
             }
         }catch(err){
             return ({
+                message: err.message
+            })
+        }
+    }
+
+    // add people
+    const addPeople = async input => {
+        try{
+            const response = await axios.post(`${apiUrl}api/v1/atms/people`, input)
+            if(response.data.success){
+                return response.data
+            }
+        }catch(err){
+            return({
                 message: err.message
             })
         }
@@ -50,7 +64,7 @@ const AtmContextProvider = ({children}) => {
 
 
  
-    const AtmContextData = {postAtm, getAtm, removeAtm}
+    const AtmContextData = {postAtm, getAtm, removeAtm, addPeople}
 
     return (
         <AtmContext.Provider value={AtmContextData}>
