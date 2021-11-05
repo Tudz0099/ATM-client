@@ -42,10 +42,7 @@ export default function Register() {
         try {
             const registerData = await register(registerForm)
             if(registerData.user){
-                toast.success(registerData.message)
-                setTimeout(() => {
-                    history.push('/')
-                }, 1500);       
+                toast.success(registerData.message)      
             }  
         } catch(err){
             toast.error('Email already exists !')

@@ -52,7 +52,7 @@ export default function Card(props) {
                             />  
                         </Col>
                         <Col sm = {8}> 
-                            <h3>{props.props.client}</h3>
+                            <h4>{props.props.client}</h4>
                             <div>Pending</div>
                             <div>transactions:{props.props.transaction}</div>
                         </Col>

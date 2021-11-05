@@ -48,21 +48,9 @@ const AtmContextProvider = ({children}) => {
         }
     }
 
-    // transactions
-    const transactionAtm = async () => {
-        try {
-            const response = await axios.get(`${apiUrl}api/v1/atms/transactions`)
-            if(response.data.atms){
-                return response.data.atms
-            }
-        }catch(err){
-            return({
-                message: err.message
-            })
-        }
-    }
+
  
-    const AtmContextData = {postAtm, getAtm, removeAtm, transactionAtm}
+    const AtmContextData = {postAtm, getAtm, removeAtm}
 
     return (
         <AtmContext.Provider value={AtmContextData}>

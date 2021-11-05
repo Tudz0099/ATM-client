@@ -8,7 +8,7 @@ export const AuthContext = createContext()
 
 const AuthContextProvider = ({children}) => {
     const [authState, dispatch] = useReducer(authReducer, {
-        authLoading: true,
+        authLoading: false,
         isAuthenticated: false,
         user: null
     })
@@ -75,6 +75,9 @@ const AuthContextProvider = ({children}) => {
                     payload: {isAuthenticated: true, user: response.data.user}
                 })
 
+                return response.data
+            }
+            if(response.data.sign === false){
                 return response.data
             }
         }catch(err){

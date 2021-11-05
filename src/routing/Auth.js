@@ -1,7 +1,7 @@
 import React,{ useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import { AuthContext } from '../components/context/AuthContext';
-import {Spinner} from 'react-bootstrap'
+import Loading from '../components/share/Loading';
 import Login from '../components/auth/Login';
 import Register from '../components/auth/Register';
 
@@ -16,9 +16,7 @@ export default function Auth({authRoute}) {
 
     if (authLoading)
 		body = (
-			<Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-            </Spinner>
+			<Loading/>
 		)
 	else if (isAuthenticated) return <Redirect to='/' />
 	else

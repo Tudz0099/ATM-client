@@ -39,12 +39,11 @@ export default function Login() {
             const loginData = await login(loginForm)
             if(loginData.user){
                 toast.success(loginData.message)
-                setTimeout(() => {
-                    history.push('/')
-                }, 1500);
+            }else{
+                toast.error(loginData.message)
             }
         }catch(err){
-            toast.error('wrong password !')
+            toast.error(err.message)
         }
     }
     return (
